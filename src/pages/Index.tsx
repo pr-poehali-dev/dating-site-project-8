@@ -341,31 +341,33 @@ const Index = () => {
         )}
       </main>
 
-      <Dialog open={showPremiumDialog} onOpenChange={setShowPremiumDialog}>
-        <DialogContent className="glass-effect border-2 border-purple-500/50">
-          <DialogHeader>
-            <DialogTitle className="text-2xl flex items-center gap-2">
-              <Icon name="Zap" className="text-purple-500" />
-              Суперлайк
-            </DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <p>
-              Отправь суперлайк и покажи особый интерес! Человек увидит, что ты действительно
-              заинтересован.
-            </p>
-            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-              <p className="text-sm text-muted-foreground">
-                <Icon name="Crown" size={16} className="inline mr-1" />
-                Premium пользователи получают 5 суперлайков в день
+      {showPremiumDialog && (
+        <Dialog open={showPremiumDialog} onOpenChange={setShowPremiumDialog}>
+          <DialogContent className="glass-effect border-2 border-purple-500/50">
+            <DialogHeader>
+              <DialogTitle className="text-2xl flex items-center gap-2">
+                <Icon name="Zap" className="text-purple-500" />
+                Суперлайк
+              </DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <p>
+                Отправь суперлайк и покажи особый интерес! Человек увидит, что ты действительно
+                заинтересован.
               </p>
+              <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                <p className="text-sm text-muted-foreground">
+                  <Icon name="Crown" size={16} className="inline mr-1" />
+                  Premium пользователи получают 5 суперлайков в день
+                </p>
+              </div>
+              <Button className="w-full gradient-secondary">
+                Отправить суперлайк
+              </Button>
             </div>
-            <Button className="w-full gradient-secondary">
-              Отправить суперлайк
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };
